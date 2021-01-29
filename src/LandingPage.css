@@ -1,0 +1,25 @@
+.landing-page{
+    /* padding-top: 200px;
+    opacity: 0.85; */
+}
+
+
+.btn-play-free {
+    font-size: 14px;
+      font-weight: 800;
+      text-align: center;
+      border-radius: 2px;
+      line-height: 16px;
+      height: 60px;
+      padding: 22px 0;
+      position: relative;
+      width: 229px;
+      z-index: 0;
+      text-overflow: ellipsis;
+      background-color: #FF4655 !important;
+      margin-right: 40px;
+      margin-top: 9px;
+      display: flex;
+      justify-content: center;
+    }
+
