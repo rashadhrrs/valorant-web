@@ -2,19 +2,27 @@ import React, { Component } from "react";
 import logo from "./assets/logo/riot-logo.png";
 import vlogo from "./assets/logo/valorant-logo.png";
 import "./Header.css";
-import {BrowserRouter as Route, Redirect, Router, Switch} from 'react-router-dom';
-import Login from './Login'
-
+import {
+  BrowserRouter as Route,
+  Redirect,
+  Router,
+  Switch,
+} from "react-router-dom";
+import Login from "./Login";
 
 class Header extends Component {
-  handleClick = () => {
-        return <Switch> <Redirect to="login"/> </Switch>
- }
+  state = {clicked: false}
+
+  handleClick= () => {
+    this.setState({
+      clicked: !this.state.clicked
+    })
+  }
+
   render() {
     return (
       <header className="header">
-        <div className="left-content">
-          <img
+          {/* <img
             src={logo}
             style={{
               width: "45px",
@@ -22,20 +30,16 @@ class Header extends Component {
               borderRight: "2px solid #7E7E7E",
             }}
             alt="logo"
-          />
+          /> */}
           <img
             src={vlogo}
-            style={{ width: "90px", marginLeft: "15px" }}
+            style={{ width: "90px", marginLeft: "20px", justifySelf: "start" }}
             alt="vlogo"
           />
-        </div>
-
-        <div className="navbar-list">
-          <ul>
+          <div style={{display: "flex"}}>
+          <ul className={this.state.clicked ? "navbar-list active" : "navbar-list"}>
             <li>
-              <a href="/" target="_blank">
-                GAME INFO
-              </a>
+              <a href="/">GAME INFO</a>
             </li>
             <li>MEDIA</li>
             <li>NEWS</li>
@@ -45,13 +49,18 @@ class Header extends Component {
               <a href="/login">OUR SOCIAL</a>
             </li>
           </ul>
-        </div>
-        <div>
-          <span style={{color: "white", marginRight: "30px", fontSize: "20px"}}>
-        <i class="fa fa-globe"/>
-        </span>
-          <button className="btn-play" onClick={this.handleClick}>PLAY NOW</button>
-        </div>
+          {/* <span
+            style={{ color: "white", marginRight: "30px", fontSize: "20px" }}
+          >
+            <i class="fas fa-globe" />
+          </span>
+          <button className="btn-play">
+            PLAY NOW
+          </button> */}
+          <div className="menu-bar" onClick={this.handleClick}>
+            <i className={this.state.clicked ? "fas fa-times": "fas fa-bars"} />
+          </div>
+          </div>
       </header>
     );
   }

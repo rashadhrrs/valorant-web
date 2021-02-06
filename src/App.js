@@ -6,7 +6,7 @@ import Login from './Login'
 
 function App() {
   return (
-    <div style={{width: "1900px"}}>
+    <div>
     <Header/>
     <div>
      <Router>

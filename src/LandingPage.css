@@ -23,3 +23,13 @@
       justify-content: center;
     }
 
+    @media screen and (max-width: 948px){
+      .btn-play-free {
+        font-size: 10px;
+        width: 140px;
+        height: 40px;
+        text-align: center;
+        line-height: 3px;
+      }
+    }
+
